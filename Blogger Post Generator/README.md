@@ -1,4 +1,4 @@
-# 🕌 Umera Ahmed Urdu Novel Blogger Post Generator
+#  Umera Ahmed Urdu Novel Blogger Post Generator
 
 This Python script automatically generates **SEO-optimized Blogger HTML posts** for **Umera Ahmed’s Urdu novels**, complete with:
 
@@ -135,7 +135,7 @@ This project is licensed under the **MIT License** — you’re free to modify, 
 
 ## ❤️ Credits
 
-Developed by [Your Name or Studio Name]  
+Developed by Usman
 Inspired by Urdu literature & the works of **Umera Ahmed**
 
 > "Her words touch hearts — now your blog can, too."
