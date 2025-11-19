@@ -8,7 +8,7 @@ import time
 # ===================== CONFIGURATION =====================
 BASE_URL = "https://urdunovelcollection.com/teray-ishq-nachaya-complete-novel-by-zainab-khan/"
 START_PAGE = 1
-END_PAGE = 10  # Poori novel ke liye itna kaafi hai, automatically ruk jayega
+END_PAGE = 927  # Poori novel ke liye itna kaafi hai, automatically ruk jayega
 
 SAVE_FOLDER = "Teray_Ishq_Nachaya_Images"
 PDF_NAME = "Teray_Ishq_Nachaya_Complete_Novel_by_Zainab_Khan.pdf"
