@@ -2,7 +2,7 @@ import fitz  # PyMuPDF
 from pathlib import Path
 
 # Hard-coded paths
-INPUT_FOLDER = Path(r"C:\Users\PCS\Downloads\Zainab Khan Novels - Copy")
+INPUT_FOLDER = Path(r"C:\Users\PCS\Downloads\New folder")
 OUTPUT_FOLDER = INPUT_FOLDER / "Output"
 OUTPUT_FOLDER.mkdir(exist_ok=True)
 
@@ -27,7 +27,7 @@ def add_watermark(pdf_path, output_path):
         # LEFT SIDE VERTICAL WATERMARK (ROTATE = 90°)
         # --------------------------------------------
         rect = fitz.Rect(
-            10,         # x1 (near left edge)
+            3,         # x1 (near left edge)
             h * 0.20,   # y1
             40,         # x2
             h * 0.80    # y2
