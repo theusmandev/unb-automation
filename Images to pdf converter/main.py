@@ -31,5 +31,5 @@ def images_to_pdf(folder_path):
     print(f"✅ PDF created successfully: {output_pdf}")
 
 # 🧩 Example usage
-folder_path = r"C:\Users\PCS\Downloads\Daaj Complete Novel By Sumaira Hameed"# apna folder path likho
+folder_path = r"E:\unb-workstation\Writers All Novels\workstation\Farzana Kharal Novels\AJNABI KON ho tum - Copy"# apna folder path likho
 images_to_pdf(folder_path)
