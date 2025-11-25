@@ -21,5 +21,5 @@ def save_image_names(folder_path):
 
 # ---------------------------
 # Run
-folder_path = r"C:\Users\PCS\Downloads\your_folder"   # <-- apna folder path
+folder_path = r"C:\Users\PCS\Downloads\1"  # <-- apna folder path
 save_image_names(folder_path)
