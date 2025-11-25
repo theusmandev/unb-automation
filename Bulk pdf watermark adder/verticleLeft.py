@@ -1,15 +1,17 @@
 
 
+# output pdfs with same titles
+
 import fitz  # PyMuPDF
 from pathlib import Path
 
 # Hard-coded paths
-INPUT_FOLDER = Path(r"E:\unb-workstation\Writers All Novels\Farzana Kharal Novels - Copy")
+INPUT_FOLDER = Path(r"E:\unb-workstation\Writers All Novels\Zainab Khan Novels - Copy\Yar yaron se hona juda novel")
 OUTPUT_FOLDER = INPUT_FOLDER / "Output"
 OUTPUT_FOLDER.mkdir(exist_ok=True)
 
 # Watermark text (plain text, non-clickable)
-WATERMARK_TEXT = "For more novels Visit: www.urdunovelbanks.com"
+WATERMARK_TEXT = "For more novels Visit: www. urdunovelbanks.com"
 
 
 def add_watermark(pdf_path, output_path):
