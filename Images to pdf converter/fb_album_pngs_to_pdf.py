@@ -101,5 +101,5 @@ def images_to_pdf(folder_path):
 
 # Run directly
 if __name__ == "__main__":
-    folder_path = r"C:\Users\PCS\Downloads\1"
+    folder_path = r"C:\Users\PCS\Downloads\Munam Malik Official"
     images_to_pdf(folder_path)
