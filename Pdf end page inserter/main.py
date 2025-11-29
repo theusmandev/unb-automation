@@ -74,6 +74,6 @@ def add_endpage_with_links(folder_path):
 
 
 # Run
-add_endpage_with_links(r"E:\unb-workstation\Writers All Novels\Zainab Khan Novels - Copy\pdfs\Yar yaron se hona juda novel")
+add_endpage_with_links(r"E:\unb-workstation\Writers All Novels\alia bukhari novel - Copy\more novels")
 
 
