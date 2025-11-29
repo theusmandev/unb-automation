@@ -136,6 +136,8 @@ print(f"Folder: {output_folder}")
 
 
 
+
+
 # import os
 # import math
 # from PIL import Image, ImageEnhance, ImageStat, ImageDraw, ImageFilter, ImageFont
