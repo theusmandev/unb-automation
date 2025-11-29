@@ -24,6 +24,6 @@ def pdf_page_to_png(pdf_path, page_number=1):
 # FUNCTION CALL (IMPORTANT)
 # ------------------------------
 
-pdf_file = r"C:\Users\PCS\Downloads\Kudsar ın Aşki by Shreen.A. Ghazi.pdf"
+pdf_file = r"E:\unb-workstation\Writers All Novels\workstation\alia bukhari novel\ok\replace"
 pdf_page_to_png(pdf_file)   # <-- ye call zaroor honi chahiye
 
