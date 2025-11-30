@@ -1,7 +1,11 @@
+import os
 from PyPDF2 import PdfReader, PdfWriter
 
 # Original PDF ka path
 input_pdf_path = r"C:\Users\PCS\Downloads\ok muhammad.pdf"
+
+# PDF ka folder path
+folder_path = os.path.dirname(input_pdf_path)
 
 reader = PdfReader(input_pdf_path)
 
@@ -10,8 +14,8 @@ for i, page in enumerate(reader.pages):
     writer = PdfWriter()
     writer.add_page(page)
     
-    # Naya PDF ka naam
-    output_pdf_path = f"page_{i+1}.pdf"
+    # Naya PDF ka path (same folder me)
+    output_pdf_path = os.path.join(folder_path, f"page_{i+1}.pdf")
     
     # Naya PDF save karo
     with open(output_pdf_path, "wb") as output_pdf:
