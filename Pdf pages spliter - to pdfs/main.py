@@ -22,3 +22,5 @@ for i, page in enumerate(reader.pages):
         writer.write(output_pdf)
 
     print(f"{output_pdf_path} saved successfully!")
+
+
