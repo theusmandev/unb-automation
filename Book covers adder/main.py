@@ -87,5 +87,5 @@ def add_image_as_cover(folder_path):
 
 # Example run
 if __name__ == "__main__":
-    folder_path = r"C:\Users\PCS\Downloads\replace"
+    folder_path = r"C:\Users\PCS\Downloads\New folder"
     add_image_as_cover(folder_path)
