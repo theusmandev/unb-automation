@@ -23,7 +23,20 @@ def add_image_as_cover(folder_path):
         print("Error: PDF ya image file folder mein nahi mili.")
         return
 
-    # Step 1: Get original PDF first page dimensions (for consistency)
+    # 🔹 NEW STEP: Rename image using PDF title
+    try:
+        new_image_name = f"{pdf_file.stem}_image{image_file.suffix}"
+        new_image_path = folder / new_image_name
+
+        if image_file.name != new_image_name:
+            os.rename(image_file, new_image_path)
+            image_file = new_image_path
+            print(f"Image rename ho gai: {new_image_name}")
+    except Exception as e:
+        print(f"Error: Image rename karte waqt issue: {e}")
+        return
+
+    # Step 1: Get original PDF first page dimensions
     try:
         reader = PdfReader(str(pdf_file))
         first_page = reader.pages[0]
@@ -33,7 +46,7 @@ def add_image_as_cover(folder_path):
         print(f"Error: PDF page dimensions padhne mein issue: {e}")
         return
 
-    # Step 2: Convert image to single-page PDF with same size
+    # Step 2: Convert image to single-page PDF
     temp_image_pdf = folder / "temp_image.pdf"
     try:
         img = Image.open(image_file)
@@ -46,33 +59,31 @@ def add_image_as_cover(folder_path):
         c = canvas.Canvas(str(temp_image_pdf), pagesize=(page_width, page_height))
         x_offset = (page_width - scaled_width) / 2
         y_offset = (page_height - scaled_height) / 2
-        c.drawImage(str(image_file), x_offset, y_offset, width=scaled_width, height=scaled_height)
+        c.drawImage(str(image_file), x_offset, y_offset,
+                    width=scaled_width, height=scaled_height)
         c.showPage()
         c.save()
     except Exception as e:
         print(f"Error: Image ko PDF mein convert karte waqt issue: {e}")
         return
 
-    # Step 3: Merge image PDF (first) + original PDF
+    # Step 3: Merge PDFs
     try:
         writer = PdfWriter()
 
-        # Add image page first (cover)
         image_reader = PdfReader(str(temp_image_pdf))
         writer.add_page(image_reader.pages[0])
 
-        # Add all original PDF pages
         for page in reader.pages:
             writer.add_page(page)
 
-        # Save to new file
         output_pdf = folder / f"{pdf_file.stem}_with_cover.pdf"
         with open(output_pdf, "wb") as f:
             writer.write(f)
 
         print(f"Image cover ke sath PDF ready: {output_pdf}")
 
-        # Agar overwrite karna hai:
+        # Overwrite original PDF
         os.replace(output_pdf, pdf_file)
 
     except Exception as e:
@@ -85,7 +96,6 @@ def add_image_as_cover(folder_path):
                 pass
 
 
-# Example run
 if __name__ == "__main__":
     folder_path = r"E:\unb-workstation\Writers All Novels\workstation\Samaira Shreef toor novels\replace"
     add_image_as_cover(folder_path)
