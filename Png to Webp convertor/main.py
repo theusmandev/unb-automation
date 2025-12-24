@@ -1,22 +1,11 @@
 import os
 from PIL import Image
 
-def convert_to_webp(source_folder, output_folder, quality=80):
-    """
-    Converts all .png, .jpg, and .jpeg images in a directory to .webp format.
-    
-    Args:
-        source_folder (str): Path to the folder containing source images.
-        output_folder (str): Path where converted images will be saved.
-        quality (int): Quality of the output WebP image (0-100). Default is 80.
-    """
-    
-    # Create output folder if it doesn't exist
+def convert_smart_webp(source_folder, output_folder, quality=65):
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    # valid extensions to look for
-    extensions = ('.png', '.jpg', '.jpeg')
+    extensions = ('.jpg', '.jpeg', '.png')
 
     for filename in os.listdir(source_folder):
         if filename.lower().endswith(extensions):
@@ -24,23 +13,30 @@ def convert_to_webp(source_folder, output_folder, quality=80):
             
             try:
                 with Image.open(file_path) as img:
-                    # Create the new filename with .webp extension
                     file_name_without_ext = os.path.splitext(filename)[0]
                     new_filename = f"{file_name_without_ext}.webp"
                     output_path = os.path.join(output_folder, new_filename)
 
-                    # Save the image
-                    # 'optimize=True' helps reduce size further without losing quality
-                    img.save(output_path, 'webp', quality=quality, optimize=True)
+                    # METHOD 6 = Best Compression (Takes slightly longer but worth it)
+                    img.save(output_path, 'webp', quality=quality, optimize=True, method=6)
                     
-                    print(f"Converted: {filename} -> {new_filename}")
+                    # --- SIZE CHECK LOGIC ---
+                    original_size = os.path.getsize(file_path)
+                    webp_size = os.path.getsize(output_path)
+                    
+                    if webp_size >= original_size:
+                        print(f"⚠️ Skipped: {filename} (WebP was larger by {(webp_size - original_size)/1024:.2f} KB)")
+                        os.remove(output_path) # WebP delete kar do kyunki faida nahi hua
+                    else:
+                        saved = (original_size - webp_size) / 1024
+                        print(f"✅ Success: {filename} saved {saved:.2f} KB")
                     
             except Exception as e:
-                print(f"Failed to convert {filename}: {e}")
+                print(f"Error converting {filename}: {e}")
 
-# --- USAGE ---
-# Replace these paths with your actual folder paths
+# Usage
 source_dir = r"C:\Users\PCS\Downloads\New folder"
 output_dir = r"C:\Users\PCS\Downloads\New folder (2)"
 
-convert_to_webp(source_dir, output_dir, quality=85)
+# Quality ko 65 par rakha hai jo JPG to WebP ke liye best balance hai
+convert_smart_webp(source_dir, output_dir, quality=65)
