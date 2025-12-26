@@ -131,10 +131,10 @@ def extract_pdf_pages(input_pdf_path, start_page, end_page, output_folder, outpu
 # 🔥 Example Usage (Your Paths)
 # ---------------------------
 if __name__ == "__main__":
-    input_pdf_path = r"E:\vu\Handouts\CS304_OOP(Updated).pdf"
+    input_pdf_path = r"C:\Users\PCS\Downloads\Kiran digest March 2021.pdf"
     output_folder = r"C:\Users\PCS\Downloads\ok"
 
-    start_page = 1  # <-- Change as needed
-    end_page = 157 # <-- Change as needed
+    start_page = 143  # <-- Change as needed
+    end_page = 169 # <-- Change as needed
 
     extract_pdf_pages(input_pdf_path, start_page, end_page, output_folder, "extracted_pages.pdf")
