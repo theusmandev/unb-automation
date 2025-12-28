@@ -6,7 +6,7 @@ import fitz  # PyMuPDF
 from pathlib import Path
 
 # Hard-coded paths
-INPUT_FOLDER = Path(r"C:\Users\PCS\Downloads\ok")
+INPUT_FOLDER = Path(r"E:\unb-workstation\Writers All Novels\workstation\Munam Malik Novels\Replace\ok\watermark")
 OUTPUT_FOLDER = INPUT_FOLDER / "Output"
 OUTPUT_FOLDER.mkdir(exist_ok=True)
 

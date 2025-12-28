@@ -74,6 +74,6 @@ def add_endpage_with_links(folder_path):
 
 
 # Run
-add_endpage_with_links(r"E:\unb-workstation\Writers All Novels\Samaira Shreef toor novels\Samaira Shreef toor novels")
+add_endpage_with_links(r"E:\unb-workstation\Writers All Novels\workstation\Munam Malik Novels\Replace\ok\New folder")
 
 
