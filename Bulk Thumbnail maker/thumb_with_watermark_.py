@@ -7,7 +7,7 @@ import math
 from PIL import Image, ImageEnhance, ImageStat, ImageDraw, ImageFilter, ImageFont
 
 # Input & Output folders
-input_folder = r"E:\unb-workstation\Writers All Novels\workstation\Munam Malik Novels\New folder"
+input_folder = r"E:\unb-workstation\Writers All Novels\workstation\Rahat Jabeen Novels\pngs"
 output_folder = os.path.join(input_folder, 'thumbnails_1000x667')
 os.makedirs(output_folder, exist_ok=True)
 
@@ -18,8 +18,8 @@ for f in os.listdir(output_folder):
         os.remove(file_path)
 
 # Canvas size
-thumb_width = 1000
-thumb_height = 667
+thumb_width = 1200
+thumb_height = 800
 thumb_size = (thumb_width, thumb_height)
 
 # Drop shadow
