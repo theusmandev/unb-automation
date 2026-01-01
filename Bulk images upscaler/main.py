@@ -6,7 +6,7 @@ import math
 from PIL import Image, ImageEnhance, ImageStat, ImageDraw, ImageFilter
 
 # 📁 Input & Output 
-input_folder = r"E:\SUNB\sumaira hameed novels\pngs"
+input_folder = r"C:\Users\PCS\Downloads\New folder"
 output_folder = os.path.join(input_folder, 'thumbnails_1000x667')
 os.makedirs(output_folder, exist_ok=True)
 
