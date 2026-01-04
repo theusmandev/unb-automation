@@ -74,6 +74,6 @@ def add_endpage_with_links(folder_path):
 
 
 # Run
-add_endpage_with_links(r"E:\unb-workstation\Writers All Novels\Anisha Umar Novels")
+add_endpage_with_links(r"E:\unb-workstation\Writers All Novels\New folder (2)\New folder")
 
 
