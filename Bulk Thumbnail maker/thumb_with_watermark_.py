@@ -4,7 +4,7 @@ import math
 from PIL import Image, ImageEnhance, ImageStat, ImageDraw, ImageFilter, ImageFont
 
 # Input & Output folders
-input_folder = r"E:\unb-workstation\Writers All Novels\humyon ayoub novels_GD_only\pngs"
+input_folder = r"E:\unb-workstation\Writers All Novels\Deeba tabassum Novels\New folder"
 output_folder = os.path.join(input_folder, 'thumbnails_1000x667')
 os.makedirs(output_folder, exist_ok=True)
 
@@ -34,7 +34,7 @@ watermark_text = "www.urdunovelbanks.com"
 font_path = r"E:\unb-workstation\Writers All Novels\RobotoCondensed-BoldItalic.ttf"
 
 try:
-    font = ImageFont.truetype(font_path, 26)
+    font = ImageFont.truetype(font_path, 30)
 except IOError:
     print("Font nahi mila! Default font use kar raha hun.")
     font = ImageFont.load_default()
