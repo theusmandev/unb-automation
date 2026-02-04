@@ -2,7 +2,7 @@ import os
 
 def save_image_names(folder_path):
     # Valid image extensions
-    valid_exts = (".png", ".jpg", ".jpeg", ".webp", ".bmp", ".tiff", ".jfif")
+    valid_exts = (".png", ".jpg",".pdf", ".jpeg", ".webp", ".bmp", ".tiff", ".jfif")
 
     # Get all image files
     images = [f for f in os.listdir(folder_path) if f.lower().endswith(valid_exts)]
@@ -21,5 +21,5 @@ def save_image_names(folder_path):
 
 # ---------------------------
 # Run
-folder_path = r"C:\Users\PCS\Downloads\1"  # <-- apna folder path
+folder_path = r"C:\Users\PCS\Downloads\mediafire"  # <-- apna folder path
 save_image_names(folder_path)
