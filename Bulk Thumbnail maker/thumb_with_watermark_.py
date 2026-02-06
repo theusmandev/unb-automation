@@ -31,7 +31,7 @@ y_offset = int(distance * math.sin(angle_radians))
 
 # Watermark Settings
 watermark_text = "www.urdunovelbanks.com"
-font_path = r"E:\unb-workstation\Writers All Novels\RobotoCondensed-BoldItalic.ttf"
+font_path = r"E:\git-workstation\unb-automation\Bulk Thumbnail maker\RobotoCondensed-BoldItalic.ttf"
 
 try:
     font = ImageFont.truetype(font_path, 30)
