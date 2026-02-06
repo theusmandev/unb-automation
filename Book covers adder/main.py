@@ -97,5 +97,5 @@ def add_image_as_cover(folder_path):
 
 
 if __name__ == "__main__":
-    folder_path = r"E:\unb-workstation\Writers All Novels\Deeba tabassum Novels\New folder (2)"
+    folder_path = r"E:\unb-workstation\Writers All Novels\Amina khan novels"
     add_image_as_cover(folder_path)
