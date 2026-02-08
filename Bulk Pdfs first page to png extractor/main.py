@@ -27,5 +27,5 @@ def pdfs_to_pngs(input_folder):
 
 # -------------------------------
 if __name__ == "__main__":
-    folder_path = r"E:\unb-workstation\Writers All Novels\workstation\humyon ayoub novels"
+    folder_path = r"E:\unb-workstation\Rare Books"
     pdfs_to_pngs(folder_path)

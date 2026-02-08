@@ -41,7 +41,7 @@ def enhance_and_upscale_images(input_folder):
 
 # 🧩 Hardcoded path (👉 change this to your folder)
 if __name__ == "__main__":
-    folder_path = r"C:\Users\PCS\Downloads\pngs" # <--- apna path yahan likho
+    folder_path = r"E:\unb-workstation\Rare Books\pngs"# <--- apna path yahan likho
     enhance_and_upscale_images(folder_path)
 
 
