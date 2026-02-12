@@ -6,7 +6,7 @@ import math
 from PIL import Image, ImageEnhance, ImageFilter, ImageDraw, ImageFont
 
 # --- 📁 فولڈرز اور سیٹنگز ---
-input_folder = r"C:\Users\PCS\Downloads\New folder"
+input_folder = r"E:\git-workstation\unb-automation\DG thumbnails Maker\output"
 output_folder = os.path.join(input_folder, 'thumbnails_with_watermark')
 os.makedirs(output_folder, exist_ok=True)
 
