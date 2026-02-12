@@ -23,7 +23,7 @@ shadow_offset = (15, 15)
 
 # 🖋️ واٹر مارک سیٹنگز
 watermark_text = "www.urdunovelbanks.com"
-font_path = r"E:\unb-workstation\Writers All Novels\RobotoCondensed-BoldItalic.ttf" # اپنا فونٹ پاتھ یہاں چیک کر لیں
+font_path = r"E:\git-workstation\unb-automation\DG thumbnails Maker\RobotoCondensed-BoldItalic.ttf" # اپنا فونٹ پاتھ یہاں چیک کر لیں
 
 try:
     font = ImageFont.truetype(font_path, 32)
