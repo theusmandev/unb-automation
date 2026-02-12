@@ -6,7 +6,7 @@ from PIL import Image, ImageEnhance, ImageFilter, ImageDraw, ImageFont
 # --- 📁 فولڈرز اور سیٹنگز ---
 input_folder = r"E:\git-workstation\unb-automation\Palak Japakhtay Qissay thumbnail Maker\Output"
 # یہاں اپنے بیک گراؤنڈ امیج کا مکمل پاتھ لکھیں
-background_image_path = r"C:\Users\PCS\Downloads\Untitled design (1) (1).png"
+background_image_path = r"E:\git-workstation\unb-automation\Palak Japakhtay Qissay thumbnail Maker\background images\In production.png"
 output_folder = os.path.join(input_folder, 'thumbnails_with_watermark')
 os.makedirs(output_folder, exist_ok=True)
 
