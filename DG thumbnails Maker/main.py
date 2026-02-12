@@ -1,85 +1,74 @@
-#v2
-import os
-import math
-from PIL import Image, ImageEnhance, ImageStat, ImageDraw, ImageFilter
 
-# 📁 Input & Output folders
+# v3
+import os
+from PIL import Image, ImageEnhance, ImageOps, ImageDraw, ImageFilter
+
+# 📁 Folders
 input_folder = r"C:\Users\PCS\Downloads\New folder"
-output_folder = os.path.join(input_folder, 'thumbnails_final_v2')
+output_folder = os.path.join(input_folder, 'canva_style_thumbnails')
 os.makedirs(output_folder, exist_ok=True)
 
-# 🧹 Clean output folder: delete all files except .webp
-for f in os.listdir(output_folder):
-    if not f.lower().endswith('.webp'):
-        try:
-            os.remove(os.path.join(output_folder, f))
-        except:
-            pass
+# 🎯 Canvas Settings
+thumb_width, thumb_height = 1200, 800
+bg_color = (248, 235, 215)  # Background cream color
 
-# 🎯 Canvas size (Landscape)
-thumb_width = 1200
-thumb_height = 800
-thumb_size = (thumb_width, thumb_height)
+# 🌑 Canva Shadow Settings
+shadow_blur = 30      # Canva Blur amount: 30
+shadow_intensity = 128# Canva Intensity 50% (255 ka half)
+shadow_spread = 10   # Canva Size: 15
 
-# 🎨 Target Background Color (Light Beige/Cream, like reference image 2)
-bg_color = (250, 240, 230)
-
-# 🌑 Soft Drop Shadow settings
-blur_radius = 30
-shadow_opacity = 100 # 0-255
-shadow_offset = (10, 10) # Slight offset to the bottom-right
-
-# 🔁 Process all images
+# 🔁 Process Images
 counter = 1
 for filename in os.listdir(input_folder):
     if filename.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
         img_path = os.path.join(input_folder, filename)
         
         try:
-            # Open and Convert
-            img = Image.open(img_path).convert("RGBA")
+            # 1. Open Image
+            raw_img = Image.open(img_path).convert("RGB")
 
-            # 🔧 Resize image to fit well within the canvas
-            max_h = int(thumb_height * 0.85)
-            max_w = int(thumb_width * 0.85)
-            img.thumbnail((max_w, max_h), Image.LANCZOS)
+            # 2. Cover Color Change (Image ko cream tint dena)
+            # Hum image ko thora sepia/cream look den ge jesa sample me hai
+            img = ImageOps.colorize(ImageOps.grayscale(raw_img), black="#3e2723", white="#f5e6cb")
+            img = ImageEnhance.Contrast(img).enhance(1.1)
 
-            # 🎯 Center position for the image
-            img_x = (thumb_width - img.width) // 2
-            img_y = (thumb_height - img.height) // 2
+            # 3. Resize
+            max_h = int(thumb_height * 0.82)
+            img.thumbnail((thumb_width, max_h), Image.LANCZOS)
+            img_w, img_h = img.size
 
-            # ☁️ Create soft drop shadow
-            # Create a larger canvas for blur
-            shadow_canvas = Image.new("RGBA", (thumb_width + blur_radius*2, thumb_height + blur_radius*2), (0, 0, 0, 0))
-            shadow_draw = ImageDraw.Draw(shadow_canvas)
-            # Draw the shadow rectangle
-            shadow_draw.rectangle(
-                [img_x + shadow_offset[0], img_y + shadow_offset[1], img_x + img.width + shadow_offset[0], img_y + img.height + shadow_offset[1]],
-                fill=(0, 0, 0, shadow_opacity)
-            )
-            # Apply blur
-            shadow_canvas = shadow_canvas.filter(ImageFilter.GaussianBlur(blur_radius))
-            # Crop shadow back to thumbnail size
-            shadow_final = shadow_canvas.crop((0, 0, thumb_width, thumb_height))
+            # 4. Create Shadow (Canva Style Backdrop)
+            # Spread ki wajha se shadow image se thora bara hota hai
+            shadow_w, shadow_h = img_w + (shadow_spread * 2), img_h + (shadow_spread * 2)
+            shadow = Image.new("RGBA", (shadow_w, shadow_h), (0, 0, 0, 0))
+            draw = ImageDraw.Draw(shadow)
+            draw.rectangle([0, 0, shadow_w, shadow_h], fill=(0, 0, 0, shadow_intensity))
+            shadow = shadow.filter(ImageFilter.GaussianBlur(shadow_blur))
 
-            # 🖼 Create final composite image
-            final_thumb = Image.new("RGB", thumb_size, bg_color)
+            # 5. Composite Final Image
+            final_thumb = Image.new("RGB", (thumb_width, thumb_height), bg_color)
             
-            # Paste Shadow first
-            final_thumb.paste(shadow_final, (0, 0), shadow_final)
+            # Center positions
+            x = (thumb_width - img_w) // 2
+            y = (thumb_height - img_h) // 2
             
-            # Paste Main Image on top
-            final_thumb.paste(img, (img_x, img_y), img)
+            # Paste Shadow (centered behind image)
+            shadow_x = (thumb_width - shadow_w) // 2
+            shadow_y = (thumb_height - shadow_h) // 2
+            final_thumb.paste(shadow, (shadow_x, shadow_y), shadow)
+            
+            # Paste Image
+            final_thumb.paste(img, (x, y))
 
-            # 💾 Save as .webp
-            custom_name = f"www.urdunovelbanks.com({counter}).webp"
-            output_path = os.path.join(output_folder, custom_name)
-            final_thumb.save(output_path, format="WEBP", optimize=True, quality=90)
-
-            print(f"Generated: {custom_name}")
+            # 6. Save
+            save_path = os.path.join(output_folder, f"www.urdunovelbanks.com({counter}).webp")
+            final_thumb.save(save_path, "WEBP", quality=90)
+            
+            print(f"Done: {filename} -> {counter}")
             counter += 1
 
         except Exception as e:
-            print(f"Error processing {filename}: {e}")
+            print(f"Error on {filename}: {e}")
 
-print(f"\n✔️ Tamam thumbnails '{output_folder}' mein target design ke mutabiq generate ho chuki hain.")
+print(f"\n✅ Done! Check folder: {output_folder}")
+
