@@ -1,0 +1,7 @@
+"Analyze the Urdu text in the provided image (specifically the Title). Translate it to understand the core theme, mood, and imagery associated with it. Based on the meaning of the title, design a creative and high-quality Urdu novel cover.
+Requirements:
+
+Visuals: The scene should realistice and visually depict the meaning of the title
+Aspect Ratio: 3:4 (Vertical/Portrait).
+Style: Cinematic, atmospheric, and professional book cover art.
+Text: Place the Urdu title in the cover, utilizing a urdu style suitable for a novel."   novel title is  گلابی شام اور عید 
