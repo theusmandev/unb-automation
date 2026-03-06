@@ -1,0 +1,1 @@
+Go through all the PDF files in this folder. Convert each PDF file name into proper Urdu text and write the titles into a file named titles in urdu.txt. Each title should be written on a new line, maintaining the same order as the files in the folder.
