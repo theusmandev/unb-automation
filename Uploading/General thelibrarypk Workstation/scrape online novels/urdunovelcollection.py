@@ -6,9 +6,9 @@ from tqdm import tqdm
 import time
 
 # ===================== CONFIGURATION =====================
-BASE_URL = "https://urdunovelcollection.com/woh-shahr-complete-urdu-novel-by-amna-iqbal-ahmed/"
+BASE_URL = "https://urdunovelcollection.com/akela-complete-urdu-novel/"
 START_PAGE = 1
-END_PAGE = 386 
+END_PAGE = 220 
 
 # Hardcoded Output Path
 HARDCODED_PATH = r"E:\unb-workstation\Writers All Novels\Uploadings\General thelibrarypk Workstation\scraped pdfs"
