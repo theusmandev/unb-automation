@@ -54,8 +54,8 @@ def process_folder(input_folder, output_folder, **margins):
 # --- Settings Yahan Badlein ---
 if __name__ == "__main__":
     # 1. Folders ke raste
-    in_dir = r"E:\unb-workstation\Writers All Novels\mediafire2"
-    out_dir = r"C:\Users\PCS\Downloads\New folderokok"
+    in_dir = r"E:\unb-workstation\Writers All Novels\Uploadings\novelkiduniya"
+    out_dir = r"E:\unb-workstation\Writers All Novels\Uploadings\novelkiduniya_ok"
 
     # 2. Apni marzi ki values (Millimeters mein)
     my_margins = {
