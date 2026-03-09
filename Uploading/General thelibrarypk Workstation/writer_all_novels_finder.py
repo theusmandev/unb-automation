@@ -4,7 +4,7 @@ import os
 # Input JSON file path
 json_file_path = r"E:\unb-workstation\Writers All Novels\Uploadings\readyready.json"
 # Input search name
-search_name = "Amna Iqbal Ahmad"  # Case-insensitive search term
+search_name = "Asia mirza"  # Case-insensitive search term
 
 try:
     # Load JSON data
