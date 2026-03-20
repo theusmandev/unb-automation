@@ -74,6 +74,6 @@ def add_endpage_with_links(folder_path):
 
 
 # Run
-add_endpage_with_links(r"E:\unb-workstation\Writers All Novels\Uploadings\DG workstation")
+add_endpage_with_links(r"E:\unb-workstation\Writers All Novels\Uploadings\DG workstation\2")
 
 
