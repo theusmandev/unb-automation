@@ -117,7 +117,7 @@ def process_novels(folder_path):
 
 if __name__ == "__main__":
     # Apna path yahan check kar lein
-    target_folder = r"E:\unb-workstation\Writers All Novels\DG workstation\Novel"
+    target_folder = r"E:\unb-workstation\Writers All Novels\Uploadings\DG workstation\2"
     process_novels(target_folder)
 
 
