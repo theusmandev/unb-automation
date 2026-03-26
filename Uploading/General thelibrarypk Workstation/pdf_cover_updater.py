@@ -101,6 +101,6 @@ def replace_first_page(folder_path):
 
 # Example run
 if __name__ == "__main__":
-    folder_path = r"E:\unb-workstation\Writers All Novels\Uploadings\General thelibrarypk Workstation\replace"
+    folder_path = r"E:\unb-workstation\Writers All Novels\Uploadings\General thelibrarypk Workstation\Asia Mirza\New folder (2)"
     replace_first_page(folder_path)
 
