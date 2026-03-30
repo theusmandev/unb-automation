@@ -24,6 +24,6 @@ def pdf_page_to_png(pdf_path, page_number=1):
 # FUNCTION CALL (IMPORTANT)
 # ------------------------------
 
-pdf_file = r"C:\Users\PCS\Downloads\Bano .pdf"
+pdf_file = r"C:\Users\PCS\Downloads\Markh episode 1.by khadija Hassan chandio.pdf"
 pdf_page_to_png(pdf_file)   # <-- ye call zaroor honi chahiye
 
