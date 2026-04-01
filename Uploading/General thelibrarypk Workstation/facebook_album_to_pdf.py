@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 
 # --- CONFIGURATION (Aapka Folder Path) ---
-INPUT_FOLDER = r"E:\unb-workstation\Writers All Novels\aymal raza\aymal raza\bari bi"
+INPUT_FOLDER = r"E:\unb-workstation\Writers All Novels\aymal raza\aymal raza\call besakhi"
 OUTPUT_FILE_NAME = "output.pdf"
 
 def convert_images_to_pdf_robust(folder_path, output_filename):
