@@ -41,7 +41,7 @@ def convert_images_to_pdf_robust(folder_path, output_filename):
     all_nums_range = set(range(start_num, end_num + 1))
     missing_nums = sorted(list(all_nums_range - set(existing_nums)))
 
-    # 4. Sorting
+
     sorted_image_paths = [image_map[n] for n in existing_nums]
 
     # 5. Conversion
