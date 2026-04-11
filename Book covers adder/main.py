@@ -97,5 +97,5 @@ def add_image_as_cover(folder_path):
 
 
 if __name__ == "__main__":
-    folder_path = r"C:\Users\PCS\Downloads\thori si\replace"
+    folder_path = r"E:\unb-workstation\Writers All Novels\Iqra Sagheer Ahmed\png\replace"
     add_image_as_cover(folder_path)

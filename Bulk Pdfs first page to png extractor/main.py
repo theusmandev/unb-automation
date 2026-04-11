@@ -27,5 +27,5 @@ def pdfs_to_pngs(input_folder):
 
 # -------------------------------
 if __name__ == "__main__":
-    folder_path = r"E:\unb-workstation\Writers All Novels\Uploadings\random novels"
+    folder_path = r"E:\unb-workstation\Writers All Novels\Iqra Sagheer Ahmed\png\replace\New folder"
     pdfs_to_pngs(folder_path)
