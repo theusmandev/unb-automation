@@ -5,7 +5,7 @@ import math
 from PIL import Image, ImageEnhance, ImageFilter, ImageDraw, ImageFont
 
 # --- 📁 فولڈرز اور سیٹنگز ---
-input_folder = r"E:\unb-workstation\Writers All Novels\Uploadings\DG workstation\2\processed_pngs"
+input_folder = r"E:\unb-workstation\Writers All Novels\Uploadings\DG workstation\3_\processed_pngs\covers"
 output_folder = os.path.join(input_folder, 'thumbnails_with_watermark')
 os.makedirs(output_folder, exist_ok=True)
 
