@@ -38,5 +38,5 @@ def pdfs_to_pngs(input_folder):
 # -------------------------------
 if __name__ == "__main__":
     # Apna path yahan check karlein
-    folder_path = r"E:\unb-workstation\Writers All Novels\Uploadings\DG workstation\2"
+    folder_path = r"E:\unb-workstation\Writers All Novels\Uploadings\DG workstation\3_"
     pdfs_to_pngs(folder_path)
