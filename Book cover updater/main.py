@@ -109,7 +109,7 @@ def replace_first_page(folder_path):
                 pass
 
 if __name__ == "__main__":
-    folder_path = r"E:\unb-workstation\Writers All Novels\Iqra Sagheer Ahmed\png\replace"
+    folder_path = r"E:\unb-workstation\Writers All Novels\Mansha Mohsin Ali\replace"
     replace_first_page(folder_path)
 
 
