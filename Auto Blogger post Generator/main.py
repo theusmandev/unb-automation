@@ -6,7 +6,7 @@ import os
 # 1. INPUT FILE SETTINGS
 # -----------------------------------------------------------
 # Apni file ka path yahan dein. 
-excel_input_path = r"C:\Users\PCS\Downloads\Anisha Umar.xlsx"
+excel_input_path = r"C:\Users\PCS\Downloads\Humayon Ayub.xlsx"
 
 # --- AUTOMATIC WRITER NAME DETECTION ---
 file_name = os.path.basename(excel_input_path) 
