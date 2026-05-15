@@ -28,7 +28,6 @@ def process_all_pdf_covers(folder_path):
     print(f"Processing started in: {folder}\n" + "-"*40)
 
     for pdf_file in folder.glob("*.pdf"):
-        # PDF ka naam clean karna
         base_name = pdf_file.stem.strip().lower()
         matching_image = None
 
@@ -36,14 +35,12 @@ def process_all_pdf_covers(folder_path):
         for file in folder.iterdir():
             if file.is_file() and file.suffix.lower() in valid_extensions:
                 # Image ke naam se -4x, 2x, -2x, _4x waghera hatana
-                # Regex logic: end mein (-) ya (space) ya (_) ho aur phir koi number aur 'x' ho
                 image_stem_clean = re.sub(r'[- _]?\d+x$', '', file.stem.strip().lower())
                 
                 if image_stem_clean == base_name:
                     matching_image = file
                     break
 
-        # Agar image nahi mili -> Move to Missing_Covers
         if not matching_image:
             print(f"⚠️ Image missing: '{pdf_file.name}' -> Moving to Missing_Covers")
             try:
@@ -53,48 +50,53 @@ def process_all_pdf_covers(folder_path):
                 print(f"❌ Move failed for {pdf_file.name}: {e}")
             continue
 
-        # Agar image mil gayi -> Process
         print(f"🔄 Processing: '{pdf_file.name}' with cover '{matching_image.name}'")
         temp_image_pdf = folder / f"temp_{pdf_file.stem}.pdf"
         output_pdf = processed_folder / pdf_file.name
         
         try:
-            # Step 1: Read PDF & get dimensions
-            reader = PdfReader(str(pdf_file))
-            reference_page = reader.pages[1] if len(reader.pages) > 1 else reader.pages[0]
-            
-            page_width = float(reference_page.mediabox.width)
-            page_height = float(reference_page.mediabox.height)
+            # 1. Safely open original PDF using 'with' to ensure it closes properly
+            with open(pdf_file, "rb") as pdf_in:
+                reader = PdfReader(pdf_in)
+                reference_page = reader.pages[1] if len(reader.pages) > 1 else reader.pages[0]
+                
+                page_width = float(reference_page.mediabox.width)
+                page_height = float(reference_page.mediabox.height)
 
-            # Step 2: Process Image to PDF page
-            img = Image.open(matching_image)
-            img_width, img_height = img.size
+                # 2. Safely open Image using 'with' so it doesn't lock the file
+                with Image.open(matching_image) as img:
+                    img_width, img_height = img.size
 
-            scale = min(page_width / img_width, page_height / img_height)
-            scaled_width = img_width * scale
-            scaled_height = img_height * scale
+                # Draw canvas
+                scale = min(page_width / img_width, page_height / img_height)
+                scaled_width = img_width * scale
+                scaled_height = img_height * scale
 
-            c = canvas.Canvas(str(temp_image_pdf), pagesize=(page_width, page_height))
-            x_offset = (page_width - scaled_width) / 2
-            y_offset = (page_height - scaled_height) / 2
-            
-            c.drawImage(str(matching_image), x_offset, y_offset, width=scaled_width, height=scaled_height)
-            c.showPage()
-            c.save()
+                c = canvas.Canvas(str(temp_image_pdf), pagesize=(page_width, page_height))
+                x_offset = (page_width - scaled_width) / 2
+                y_offset = (page_height - scaled_height) / 2
+                
+                c.drawImage(str(matching_image), x_offset, y_offset, width=scaled_width, height=scaled_height)
+                c.showPage()
+                c.save()
 
-            # Step 3: Merge New Cover and Old Pages
-            writer = PdfWriter()
-            img_reader = PdfReader(str(temp_image_pdf))
-            writer.add_page(img_reader.pages[0]) # Add new cover
+                # 3. Merge New Cover and Old Pages safely
+                writer = PdfWriter()
+                
+                # Open temp image pdf safely
+                with open(temp_image_pdf, "rb") as temp_in:
+                    img_reader = PdfReader(temp_in)
+                    writer.add_page(img_reader.pages[0]) # Add new cover
 
-            for i in range(1, len(reader.pages)): # Add remaining pages
-                writer.add_page(reader.pages[i])
+                    for i in range(1, len(reader.pages)): # Add remaining pages
+                        writer.add_page(reader.pages[i])
 
-            # Step 4: Save directly to Processed_PDFs
-            with open(output_pdf, "wb") as f:
-                writer.write(f)
+                    # Save directly to Processed_PDFs
+                    with open(output_pdf, "wb") as f_out:
+                        writer.write(f_out)
 
-            # Step 5: Cleanup main folder (Delete original PDF and move image to processed)
+            # --- YAHAAN TAK SAB FILES CLOSE HO CHUKI HAIN ---
+            # Ab hum inko araam se delete aur move kar sakte hain
             os.remove(pdf_file)
             shutil.move(str(matching_image), str(processed_folder / matching_image.name))
 
@@ -106,6 +108,7 @@ def process_all_pdf_covers(folder_path):
             error_count += 1
             
         finally:
+            # Har haal mein temporary file remove karni hai
             if temp_image_pdf.exists():
                 try:
                     os.remove(temp_image_pdf)
