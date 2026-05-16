@@ -3,7 +3,7 @@ from pathlib import Path
 import traceback
 
 # Hard-coded paths
-INPUT_FOLDER = Path(r"E:\unb-workstation\Writers All Novels\Nasir Hussain Novels")
+INPUT_FOLDER = Path(r"E:\unb-workstation\Writers All Novels\Uploadings\random novels\Processed_PDFs")
 OUTPUT_FOLDER = INPUT_FOLDER / "Output"
 OUTPUT_FOLDER.mkdir(exist_ok=True)
 
