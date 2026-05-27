@@ -39,8 +39,8 @@ def process_and_add_frame(input_pdf_path, output_pdf_path, image_path):
     print(f"\nMukammal ho gaya! Nayi PDF yahan save hai:\n{output_pdf_path}")
 
 # --- Aapke Paths ---
-input_pdf = r"C:\Users\PCS\Downloads\Aina Dar By Mah Noor Shahzaad.pdf"
-image_frame = r"C:\Users\PCS\Downloads\688071828_1251191766794755_4907484305878636859_n-Photoroom.png"
+input_pdf = r"C:\Users\PCS\Downloads\Aina_Dar_submission - Google Docs.pdf"
+image_frame = r"C:\Users\PCS\Downloads\Floral-Border-for-Invitation-edit-online.png"
 output_pdf = r"C:\Users\PCS\Downloads\Aina Dar By Mah Noor Shahzaad_output.pdf" 
 
 process_and_add_frame(input_pdf, output_pdf, image_frame)
