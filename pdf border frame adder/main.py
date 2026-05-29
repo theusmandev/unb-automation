@@ -40,7 +40,7 @@ def process_and_add_frame(input_pdf_path, output_pdf_path, image_path):
 
 # --- Aapke Paths ---
 input_pdf = r"C:\Users\PCS\Downloads\Aina_Dar_submission - Google Docs.pdf"
-image_frame = r"C:\Users\PCS\Downloads\Floral-Border-for-Invitation-edit-online.png"
+image_frame = r"C:\Users\PCS\Downloads\czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjM3LXdpdC0zOGUtam9iMTI5XzEucG5n.webp"
 output_pdf = r"C:\Users\PCS\Downloads\Aina Dar By Mah Noor Shahzaad_output.pdf" 
 
 process_and_add_frame(input_pdf, output_pdf, image_frame)

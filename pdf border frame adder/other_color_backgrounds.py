@@ -45,7 +45,7 @@ def apply_background_multiply(input_pdf_path, output_pdf_path, image_path):
 
 # --- Aapke Paths ---
 input_pdf = r"C:\Users\PCS\Downloads\Aina_Dar_submission - Google Docs.pdf"
-image_frame = r"C:\Users\PCS\Downloads\Floral-Border-for-Invitation-edit-online.jpg"
+image_frame = r"C:\Users\PCS\Downloads\Vintage-Page-Border-Template-edit-online.png"
 output_pdf = r"C:\Users\PCS\Downloads\Aina Dar By Mah Noor Shahzaad_output.pdf" 
 
 apply_background_multiply(input_pdf, output_pdf, image_frame)
