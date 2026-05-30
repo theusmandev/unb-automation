@@ -1,3 +1,4 @@
+
 import os
 import math
 from PIL import Image, ImageEnhance, ImageDraw, ImageFilter, ImageFont, ImageOps
@@ -5,7 +6,7 @@ from PIL import Image, ImageEnhance, ImageDraw, ImageFilter, ImageFont, ImageOps
 # ────────────────────────────────────────────────
 #             Configuration & Folders
 # ────────────────────────────────────────────────
-input_folder = r"E:\unb-workstation\Writers All Novels\pngs"
+input_folder = r"C:\Users\PCS\Downloads\pngs"
 output_folder = os.path.join(input_folder, 'thumbnails_1200x800_studio')
 os.makedirs(output_folder, exist_ok=True)
 
@@ -26,7 +27,7 @@ x_offset = 0
 y_offset = 25  # Straight downward shadow
 
 # Watermark Settings (Spaced out for premium look)
-watermark_text = "W W W . U R D U N O V E L B A N K S . C O M"
+watermark_text = "W W W . U R D U F I C T I O N B A N K . C O M"
 font_path = r"E:\git-workstation\unb-automation\Bulk Thumbnail maker\RobotoCondensed-BoldItalic.ttf"
 
 try:
