@@ -40,10 +40,10 @@ def extract_pdf_pages(input_path, output_path, start_page, end_page):
 # ==========================================
 # Yahan apni marzi ki values (Hardcoded) dein
 # ==========================================
-INPUT_PDF = "apni_file_ka_path.pdf"       # Apni asli PDF ka path (jaise 'C:/books/novel.pdf')
-OUTPUT_PDF = "extracted_output.pdf"       # Jo nayi file banegi uska naam/path
-START_PAGE = 3                            # Kahan se start karna hai (e.g., Page 3)
-END_PAGE = 7                              # Kahan tak extract karna hai (e.g., Page 7 tak)
+INPUT_PDF = r"C:\Users\PCS\Downloads\Khwateen digest June 2026.pdf"      # Apni asli PDF ka path (jaise 'C:/books/novel.pdf')
+OUTPUT_PDF = r"C:\Users\PCS\Downloads\Khwateen digest June 2026_output.pdf"    # Jo nayi file banegi uska naam/path
+START_PAGE = 158                            # Kahan se start karna hai (e.g., Page 3)
+END_PAGE = 191                             # Kahan tak extract karna hai (e.g., Page 7 tak)
 
 # Program run karna
 extract_pdf_pages(INPUT_PDF, OUTPUT_PDF, START_PAGE, END_PAGE)
