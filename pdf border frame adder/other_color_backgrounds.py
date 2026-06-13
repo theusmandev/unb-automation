@@ -19,10 +19,10 @@ def add_perfect_border(input_pdf_path, output_pdf_path, transparent_image_path):
 
 
 # --- Aapke Paths ---
-input_pdf = r"C:\Users\PCS\Downloads\قناعت قلب.pdf"
+input_pdf = r"C:\Users\PCS\Downloads\Untitled document.pdf"
 
 # YAHAN APNI NAYI TRANSPARENT PNG KA PATH DENA HAI:
-transparent_frame = r"E:\unb-workstation\Writers All Novels\borders\L-3-R-3-T-4.7-B-4.7 (2)compressed-Photoroom.png"
+transparent_frame = r"C:\Users\PCS\Downloads\L-3-R-3-T-4.7-B-4.7 (3)-Photoroom.png"
 
 output_pdf = r"C:\Users\PCS\Downloads\Akhi by hooria Amna khan final_perfect.pdf"
 
