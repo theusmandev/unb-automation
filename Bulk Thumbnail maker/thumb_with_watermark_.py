@@ -1,5 +1,3 @@
-
-
 import os
 import math
 from PIL import Image, ImageEnhance, ImageStat, ImageDraw, ImageFilter, ImageFont
@@ -31,22 +29,14 @@ x_offset = -int(distance * math.cos(angle_radians))
 y_offset = int(distance * math.sin(angle_radians))
 
 # Watermark Settings
-# Image jaisi letter spacing dene ke liye spaces add ki hain
 watermark_text = "U R D U N O V E L B A N K S . C O M" 
 font_path = r"E:\unb-workstation\fonts\ahkio-font\ahkio-light.otf"
 
 try:
-    # Size 30 se 35 kar diya gaya hai takay zyada wazeh lagay, zaroorat paray toh change kar lein
     font = ImageFont.truetype(font_path, 35) 
 except IOError:
     print("Font nahi mila! Default font use kar raha hun.")
     font = ImageFont.load_default()
-
-# Auto best color for text (Black or White)
-def get_best_text_color(bg_color):
-    r, g, b = bg_color
-    luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
-    return (0, 0, 0, 255) if luminance > 0.5 else (255, 255, 255, 255)
 
 # ────────────────────────────────────────────────
 #            Main Processing Loop
@@ -76,12 +66,12 @@ for filename in os.listdir(input_folder):
     avg_color = tuple(int(c) for c in stat.mean[:3])
     background = Image.new("RGB", thumb_size, avg_color)
 
-    # Resize cover - thora sa margin chora hai neechay text ke liye (0.9 se 0.82)
+    # Resize cover 
     max_cover_width = int(thumb_width * 0.5)
     max_cover_height = int(thumb_height * 0.82)
     img.thumbnail((max_cover_width, max_cover_height), Image.LANCZOS)
 
-    # Center position - Cover ko thora sa upar shift kiya hai (-15px)
+    # Center position 
     x = (thumb_width - img.width) // 2
     y = (thumb_height - img.height) // 2 - 15
 
@@ -98,7 +88,9 @@ for filename in os.listdir(input_folder):
 
     # Watermark Setup
     draw = ImageDraw.Draw(composite)
-    text_color = get_best_text_color(avg_color)
+    
+    # Hamesha White Color Set Kar Diya Gaya Hai
+    text_color = (255, 255, 255, 255)
     
     # Text size calculate karna
     try:
@@ -112,7 +104,7 @@ for filename in os.listdir(input_folder):
     # Horizontal aur Vertical positioning (Bottom Center)
     wm_x = (thumb_width - text_w) // 2
     remaining_bottom_space = thumb_height - (y + img.height)
-    wm_y = (y + img.height) + (remaining_bottom_space - text_h) // 2 - 10 # -10 optical alignment ke liye
+    wm_y = (y + img.height) + (remaining_bottom_space - text_h) // 2 - 10 
     
     # Text Draw karna
     draw.text((wm_x, wm_y), watermark_text, font=font, fill=text_color)
@@ -128,9 +120,8 @@ for filename in os.listdir(input_folder):
 
     print(f"Generated: {output_filename}")
 
-print(f"\nDone! Total {counter} thumbnails ban gaye")
+print(f"\nDone! Total {counter} thumbnails ban gaye.")
 print(f"Output folder: {output_folder}")
-
 
 
 
