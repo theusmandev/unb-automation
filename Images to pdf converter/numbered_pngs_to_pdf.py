@@ -104,7 +104,7 @@ def images_to_pdf(folder_path):
 # —————————————— Run Directly ——————————————
 if __name__ == "__main__":
     # ←←←←← Yahan apna folder path daalo ←←←←←
-    folder_path = r"E:\unb-workstation\Writers All Novels\workstation\Farzana Kharal Novels\AJNABI KON ho tum - Copy"
+    folder_path = r"C:\Users\PCS\Downloads\us dar ka jogi"
     
     # Agar chaaho to yahan multiple folders bhi daal sakte ho:
     # folders = [r"path1", r"path2", r"path3"]
