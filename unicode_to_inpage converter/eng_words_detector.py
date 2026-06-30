@@ -56,7 +56,7 @@ pdf_file = r"C:\Users\PCS\Desktop\test.pdf"
 output_file = r"C:\Users\PCS\Desktop\eng_word.txt"
 
 # 3. Yahan wo header text likhein jo har page par hai aur aap usko ignore karna chahte hain
-header_text = "Published On URDUNOVELBANKS.COM" 
+header_text = "DNA By Noor Rajpoot" 
 
 # Function ko call karein
 extract_english_from_pdf(pdf_file, output_file, header_to_ignore=header_text)

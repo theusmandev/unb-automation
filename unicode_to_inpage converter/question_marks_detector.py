@@ -28,7 +28,7 @@ def detect_fazool_question_marks(pdf_path, output_txt_path):
 
             for line in lines:
                 # Agar line mein English wala question mark '?' mojood hai
-                if '?' in line:
+                if '*' in line:
                     page_issues.append(line.strip())
 
             # Agar is page par koi masla mila hai to report mein likhein

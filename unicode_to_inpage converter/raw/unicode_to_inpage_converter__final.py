@@ -198,8 +198,8 @@ def read_docx_file(path: str) -> str:
 # ─────────────────────────────────────────────────────────────────────────────
 def main():
     # 👇 Apne paths yahan set karein 👇
-    input_path = r"C:\Users\PCS\Downloads\unicode_to_inpage converter\orignal.txt"
-    output_path = r"C:\Users\PCS\Downloads\unicode_to_inpage converter\orignal_inpage.txt"
+    input_path = r"C:\Users\PCS\Downloads\publishing\N\nr.docx"
+    output_path = r"C:\Users\PCS\Downloads\publishing\N\nr-done.txt"
 
     # ── Checks ───────────────────────────────────────────────────────────────
     if not os.path.exists(input_path):
