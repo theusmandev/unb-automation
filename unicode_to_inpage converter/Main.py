@@ -28,8 +28,8 @@ from collections import Counter
 #  ⚙️  SETTINGS — Yahan sirf yahi section change karna hai
 # ══════════════════════════════════════════════════════════════
 
-INPUT_PATH  = r"C:\Users\PCS\Downloads\dna episode 1 (1).docx"
-OUTPUT_PATH = r"E:\unb-workstation\InPage DNA\DNA\NEW VERSION\Orignal-done.txt"
+INPUT_PATH  = r"C:\Users\PCS\Downloads\ASAR EP 14.docx"
+OUTPUT_PATH = r"C:\Users\PCS\Downloads\ASAR EP 14-Episode 2.txt"
 # V4.3 FIX: Agar Word file mein OCR ya typist ki ghaltiyan hain, unhe yahan theek karein
 TYPO_FIXES = {
     'کلاشٹ': 'کلازٹ',

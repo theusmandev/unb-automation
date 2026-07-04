@@ -47,7 +47,7 @@ def detect_fazool_question_marks(pdf_path, output_txt_path):
 # --- Program yahan se start hoga ---
 
 # 1. Yahan apne PDF novel ka path daalein
-pdf_file = r"C:\Users\PCS\Desktop\test.pdf"
+pdf_file = r"C:\Users\PCS\Desktop\test1.pdf"
 
 # 2. Yahan us text file ka naam likhein jisme aapko summary chahiye
 output_file = r"C:\Users\PCS\Desktop\Q marks.txt"

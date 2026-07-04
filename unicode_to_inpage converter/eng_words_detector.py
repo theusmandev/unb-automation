@@ -50,13 +50,13 @@ def extract_english_from_pdf(pdf_path, output_txt_path, header_to_ignore=""):
 # --- Program yahan se start hoga ---
 
 # 1. Yahan apne PDF novel ka sahi path likhein
-pdf_file = r"C:\Users\PCS\Desktop\test.pdf"
+pdf_file = r"C:\Users\PCS\Desktop\test1.pdf"
 
 # 2. Yahan us text file ka naam likhein jisme report chahiye
 output_file = r"C:\Users\PCS\Desktop\eng_word.txt"
 
 # 3. Yahan wo header text likhein jo har page par hai aur aap usko ignore karna chahte hain
-header_text = "DNA By Noor Rajpoot" 
+header_text = "Published On URDUNOVELBANKS.COM" 
 
 # Function ko call karein
 extract_english_from_pdf(pdf_file, output_file, header_to_ignore=header_text)
