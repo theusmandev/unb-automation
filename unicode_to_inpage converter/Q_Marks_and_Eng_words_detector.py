@@ -2,6 +2,19 @@ import fitz  # PyMuPDF library
 import re
 import os
 
+# ==========================================
+# ⚙️ MAIN SETTINGS (Yahan changes karein)
+# ==========================================
+
+# 1. Yahan apne PDF novel ka path daalein
+PDF_FILE_PATH = r"C:\Users\PCS\Desktop\test1.pdf"
+
+# 2. Header text jo ignore karna hai
+HEADER_TEXT_TO_IGNORE = "Published On URDUNOVELBANKS.COM"
+
+# ==========================================
+
+
 def extract_english_from_pdf(doc, output_txt_path, header_to_ignore=""):
     # Yeh Regex pattern sirf English words aur unke darmiyan spaces/punctuation ko match karega
     eng_pattern = re.compile(r'[a-zA-Z]+(?:[\s.,!?\'-]+[a-zA-Z]+)*')
@@ -53,7 +66,6 @@ def detect_fazool_question_marks(doc, output_txt_path):
             page_issues = []
 
             for line in lines:
-                # Note: Purane code mein '*' tha, isay '?' se replace kiya gaya hai
                 if '?' in line:
                     page_issues.append(line.strip())
 
@@ -82,14 +94,13 @@ def analyze_pdf(pdf_path, header_text):
     qmarks_output_file = os.path.join(reports_folder, "Q_marks.txt")
 
     try:
-        # PDF ko sirf ek dafa open karna dono tasks ke liye
         doc = fitz.open(pdf_path)
     except Exception as e:
         print(f"Error: PDF file open nahi ho saki. Details: {e}")
         return
 
     print("="*50)
-    print("Starting URDUNOVELBANKS.COM PDF Analysis...")
+    print("Starting PDF Analysis...")
     print("="*50 + "\n")
 
     # Dono functions ko call karna
@@ -104,13 +115,7 @@ def analyze_pdf(pdf_path, header_text):
     print(f"All tasks completed successfully! Dono reports aapke Desktop ke 'reports' folder mein mojood hain.")
     print("="*50)
 
-# --- Program yahan se start hoga ---
-
-# 1. Yahan apne PDF novel ka path daalein
-pdf_file = r"C:\Users\PCS\Desktop\test1.pdf"
-
-# 2. Header text jo ignore karna hai
-header_text = "Published On URDUNOVELBANKS.COM"
-
-# Main function ko call karein
-analyze_pdf(pdf_file, header_text)
+# --- Execution ---
+if __name__ == "__main__":
+    # Top par set kiye gaye variables yahan use ho rahe hain
+    analyze_pdf(PDF_FILE_PATH, HEADER_TEXT_TO_IGNORE)
