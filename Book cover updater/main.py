@@ -109,7 +109,7 @@ def replace_first_page(folder_path):
                 pass
 
 if __name__ == "__main__":
-    folder_path = r"E:\unb-workstation\Writers All Novels\Uploadings\random novels\replace"
+    folder_path = r"C:\Users\PCS\Downloads\new folder"
     replace_first_page(folder_path)
 
 

@@ -11,7 +11,7 @@ PDF_FILE_PATH = r"C:\Users\PCS\Desktop\test1.pdf"
 
 # 2. Header text jo ignore karna hai
 HEADER_TEXT_TO_IGNORE = "Published On URDUNOVELBANKS.COM"
-
+# HEADER_TEXT_TO_IGNORE = "Published On URDUNOVELBANKS.COM"
 # ==========================================
 
 
