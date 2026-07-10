@@ -48,6 +48,9 @@ def process_html(html: str) -> str:
     # Step 4: ul, ol mein wc-list class add karo
     html = add_class_to_tags(html, ["ul", "ol"], "wc-list")
 
+    # Step 5: blockquote mein wc-quote class add karo
+    html = add_class_to_tags(html, ["blockquote"], "wc-quote")
+
     return html
 
 
